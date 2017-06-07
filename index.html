@@ -7,6 +7,7 @@
     <link rel="icon" href="http://yinrs.win/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://yinrs.win/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://class.yinr.win/css/min.css" />
+    <link rel="stylesheet" type="text/css" href="css/data.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.3/vue.min.js"></script>
 </head>
 
@@ -14,9 +15,12 @@
     <h1>数据</h1>
     <div id="data" class="data">
         <h2>{{ title }}</h2>
+        <label class="search-box">
+            <input type="text" placeholder="输入搜索内容" v-model="searchTxt">
+        </label>
         <p><small>{{ info }}</small></p>
         <p><small><a :href="reflink">{{ refname }}</a></small></p>
-        <div class="data_pieces" v-for="data_piece in datas">
+        <div class="data_pieces" v-for="data_piece in filteredData">
             <h4>{{ data_piece.title }}</h4>
             <p>{{ data_piece.descrip }}</p>
         </div>
