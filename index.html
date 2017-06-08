@@ -20,10 +20,12 @@
         </label>
         <p><small>{{ info }}</small></p>
         <p><small><a :href="reflink">{{ refname }}</a></small></p>
-        <div class="data_pieces" v-for="data_piece in filteredData">
-            <h4>{{ data_piece.title }}</h4>
-            <p>{{ data_piece.descrip }}</p>
-        </div>
+        <transition-group name="data-pieces">
+            <div class="data-pieces" v-for="data_piece in filteredData" :key="data_piece.title">
+                <h4>{{ data_piece.title }}</h4>
+                <p>{{ data_piece.descrip }}</p>
+            </div>
+        </transition-group>
     </div>
 
     <script src="./data/data.js"></script>

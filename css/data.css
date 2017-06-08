@@ -8,3 +8,16 @@
     top: 0;
     right: 0;
 }
+
+.data-pieces {
+    transition: all 1s;
+}
+
+.data-pieces-enter, .data-pieces-leave-active {
+    opacity: 0;
+    transform: translateX(20%);
+}
+
+.data-pieces-leave-active {
+    position: absolute;
+}
